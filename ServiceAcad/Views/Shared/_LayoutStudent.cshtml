@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Academy - Student Dashboard</title>
+    <link rel="stylesheet" href="~/css/student.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="~/images/logo.png" alt="Service Academy Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="@Url.Action("Index", "StudentDashboard")">Dashboard</a></li>
+                <li><a href="@Url.Action("Program", "StudentDashboard")">Program</a></li>
+            </ul>
+            <div class="user-profile">
+                <div class="notifications">
+                    <i class="fa fa-bell"></i>
+                    <i class="fa fa-envelope"></i>
+                </div>
+                <div class="user-info">
+                    <img src="~/images/user.png" alt="User Photo">
+                    <span>Student</span>
+                    <div class="dropdown-menu">
+                        <a href="#">Profile</a>
+                        <a href="#">Settings</a>
+                        <a href="#">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <footer>
+        <p>© 2024 Service Academy. All rights reserved.</p>
+    </footer>
+</body>
+</html>

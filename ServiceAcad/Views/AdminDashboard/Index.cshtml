@@ -1,0 +1,147 @@
+﻿@{
+    ViewBag.Title = "Admin Dashboard";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="admin-dashboard">
+    <!-- Dashboard Overview Section -->
+    <div class="row mt-4">
+        <div class="col-lg-3 col-sm-6">
+            <div class="card bg-light mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">New Trainees</h5>
+                    <p class="card-text">202 <span class="text-success">(+15.34%)</span></p>
+                </div>
+            </div>
+        </div>
+        <!-- Add more cards for other metrics here -->
+    </div>
+
+    <!-- Graphs and Charts Section -->
+    <div class="row mt-4">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Engagement Over Time</h5>
+                    <canvas id="engagementChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Performance Metrics</h5>
+                    <canvas id="performanceChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Centralized Management Section -->
+    <div class="row mt-4">
+        <div class="col-lg-6 col-md-12">
+            <div class="card bg-light mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">User Management</h5>
+                    <p class="card-text">Manage students, instructors, and administrators.</p>
+                    <a href="#" class="btn btn-primary">Manage Users</a>
+                </div>
+            </div>
+        </div>
+        <!-- Add similar blocks for Course Management, Content Library, and Role-Based Permissions -->
+    </div>
+
+    <!-- Analytics and Reporting Section -->
+    <div class="row mt-4">
+        <div class="col-lg-6 col-md-12">
+            <div class="card bg-light mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Detailed Usage Statistics</h5>
+                    <p class="card-text">View comprehensive reports on system usage and activity.</p>
+                    <a href="#" class="btn btn-primary">View Reports</a>
+                </div>
+            </div>
+        </div>
+        <!-- Add similar blocks for Student Performance, Instructor Activity, and Platform Health -->
+    </div>
+
+    <!-- Platform Customization Section -->
+    <div class="row mt-4">
+        <div class="col-lg-6 col-md-12">
+            <div class="card bg-light mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Branding and Theming</h5>
+                    <p class="card-text">Customize the look and feel of the platform.</p>
+                    <a href="#" class="btn btn-primary">Customize</a>
+                </div>
+            </div>
+        </div>
+        <!-- Add similar blocks for UI and Navigation Customization -->
+    </div>
+
+    <!-- Security and Compliance Section -->
+    <div class="row mt-4">
+        <div class="col-lg-6 col-md-12">
+            <div class="card bg-light mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Data Privacy and Security</h5>
+                    <p class="card-text">Implement and manage security features to protect user data.</p>
+                    <a href="#" class="btn btn-primary">Manage Security</a>
+                </div>
+            </div>
+        </div>
+        <!-- Add similar blocks for Compliance Standards -->
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // JavaScript code for charts
+        const engagementCtx = document.getElementById('engagementChart').getContext('2d');
+        new Chart(engagementCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Trainees',
+                    data: [200, 400, 600, 800, 1000],
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    fill: true,
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        const performanceCtx = document.getElementById('performanceChart').getContext('2d');
+        new Chart(performanceCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+                datasets: [{
+                    label: 'Performance',
+                    data: [50, 60, 70, 80, 90],
+                    backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                    borderColor: 'rgba(153, 102, 255, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+}

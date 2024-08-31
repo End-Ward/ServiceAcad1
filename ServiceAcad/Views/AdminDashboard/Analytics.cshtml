@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Analytics";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="analytics-container">
+    <h2 class="page-title">Analytics</h2>
+
+    <div class="chart-section">
+        <!-- Engagement Over Time Chart -->
+        <div class="chart-card">
+            <h5 class="chart-title">Engagement Over Time</h5>
+            <canvas id="engagementChart"></canvas>
+        </div>
+
+        <!-- Performance Metrics Chart -->
+        <div class="chart-card">
+            <h5 class="chart-title">Performance Metrics</h5>
+            <canvas id="performanceChart"></canvas>
+        </div>
+
+        <!-- Reports Section -->
+        <div class="chart-card">
+            <h5 class="chart-title">Reports</h5>
+            <p class="chart-text">Generate detailed usage and performance reports.</p>
+            <a href="#" class="btn btn-primary">Generate Reports</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Engagement Chart
+        const ctx1 = document.getElementById('engagementChart').getContext('2d');
+        new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April'],
+                datasets: [{
+                    label: 'Engagement',
+                    data: [65, 59, 80, 81],
+                    borderColor: '#1f3a93',
+                    fill: false
+                }]
+            }
+        });
+
+        // Performance Chart
+        const ctx2 = document.getElementById('performanceChart').getContext('2d');
+        new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['January', 'February', 'March', 'April'],
+                datasets: [{
+                    label: 'Performance',
+                    data: [12, 19, 3, 5],
+                    backgroundColor: '#1f3a93'
+                }]
+            }
+        });
+    </script>
+}

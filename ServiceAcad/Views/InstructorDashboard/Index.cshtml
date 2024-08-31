@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Instructor Dashboard";
+    Layout = "~/Views/Shared/_LayoutInstructor.cshtml";
+}
+
+@section Styles {
+    <link href="~/css/instructor.css" rel="stylesheet" />
+}
+
+<div class="container">
+    <h2 class="mt-4">Your Programs</h2>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card mb-4">
+                <img src="~/images/course1.jpg" class="card-img-top" alt="Course Image">
+                <div class="card-body">
+                    <h5 class="card-title">E-SULAT: Strengthening Research Skills</h5>
+                    <p class="card-text">A program to enhance the research skills of secondary teachers...</p>
+                </div>
+            </div>
+            <div class="card mb-4">
+                <img src="~/images/course2.jpg" class="card-img-top" alt="Course Image">
+                <div class="card-body">
+                    <h5 class="card-title">Google Workspace Workshop</h5>
+                    <p class="card-text">Training for employees on how to effectively use Google Workspace tools...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5>June 2024</h5>
+                </div>
+                <div class="card-body">
+                    <div id="calendar"></div>
+                </div>
+            </div>
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5>Upcoming Events</h5>
+                </div>
+                <div class="card-body">
+                    <p>Currently no upcoming events.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

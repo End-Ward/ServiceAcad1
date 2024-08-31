@@ -1,0 +1,96 @@
+﻿@{
+    ViewData["Title"] = "Analytics & Reporting";
+    Layout = "~/Views/Shared/_LayoutInstructor.cshtml";
+}
+
+<div class="container mt-4">
+    <h2>Analytics and Reporting</h2>
+
+    <div class="row mt-5">
+        <!-- Class Performance Metrics -->
+        <div class="col-md-6">
+            <h4>Class Performance Metrics</h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>Average Grade</th>
+                        <th>Completion Rate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Advanced Programming Concepts</td>
+                        <td>B</td>
+                        <td>80%</td>
+                    </tr>
+                    <tr>
+                        <td>Introduction to Databases</td>
+                        <td>A-</td>
+                        <td>85%</td>
+                    </tr>
+                    <tr>
+                        <td>Web Development Bootcamp</td>
+                        <td>A</td>
+                        <td>90%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Student Engagement Data -->
+        <div class="col-md-6">
+            <h4>Student Engagement</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Student</th>
+                        <th>Engagement Score</th>
+                        <th>Last Login</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>8.5/10</td>
+                        <td>Aug 28, 2024</td>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td>9/10</td>
+                        <td>Aug 27, 2024</td>
+                    </tr>
+                    <tr>
+                        <td>Emily Johnson</td>
+                        <td>9.5/10</td>
+                        <td>Aug 29, 2024</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <hr class="mt-5">
+
+    <!-- Individual Student Tracking -->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h4>Individual Student Tracking</h4>
+            <form>
+                <div class="mb-3">
+                    <label for="individualStudent" class="form-label">Select Student</label>
+                    <select class="form-control" id="individualStudent">
+                        <option>John Doe</option>
+                        <option>Jane Smith</option>
+                        <option>Emily Johnson</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="individualProgress" class="form-label">View Progress</label>
+                    <input type="text" class="form-control" id="individualProgress" readonly value="75%">
+                </div>
+                <button type="submit" class="btn btn-primary">Generate Report</button>
+            </form>
+        </div>
+    </div>
+</div>

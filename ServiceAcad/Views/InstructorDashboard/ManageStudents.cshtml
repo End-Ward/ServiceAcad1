@@ -1,0 +1,94 @@
+﻿@{
+    ViewData["Title"] = "Manage Students";
+    Layout = "~/Views/Shared/_LayoutInstructor.cshtml";
+}
+
+<div class="container mt-4">
+    <h2>Student Engagement</h2>
+
+    <div class="row mt-5">
+        <!-- Student Progress Tracking -->
+        <div class="col-md-6">
+            <h4>Student Progress</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Course</th>
+                        <th>Progress</th>
+                        <th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>Advanced Programming Concepts</td>
+                        <td>75%</td>
+                        <td>B+</td>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td>Introduction to Databases</td>
+                        <td>85%</td>
+                        <td>A-</td>
+                    </tr>
+                    <tr>
+                        <td>Emily Johnson</td>
+                        <td>Web Development Bootcamp</td>
+                        <td>95%</td>
+                        <td>A</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Announcements and Messaging -->
+        <div class="col-md-6">
+            <h4>Announcements & Messaging</h4>
+            <form>
+                <div class="mb-3">
+                    <label for="announcementTitle" class="form-label">Announcement Title</label>
+                    <input type="text" class="form-control" id="announcementTitle" placeholder="Enter title">
+                </div>
+                <div class="mb-3">
+                    <label for="announcementContent" class="form-label">Content</label>
+                    <textarea class="form-control" id="announcementContent" rows="3" placeholder="Enter your announcement or message"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="targetCourse" class="form-label">Target Course</label>
+                    <select class="form-control" id="targetCourse">
+                        <option>All Courses</option>
+                        <option>Advanced Programming Concepts</option>
+                        <option>Introduction to Databases</option>
+                        <option>Web Development Bootcamp</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Announcement</button>
+            </form>
+        </div>
+    </div>
+
+    <hr class="mt-5">
+
+    <!-- Grade Management -->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h4>Manage Grades</h4>
+            <form>
+                <div class="mb-3">
+                    <label for="studentSelect" class="form-label">Select Student</label>
+                    <select class="form-control" id="studentSelect">
+                        <option>John Doe</option>
+                        <option>Jane Smith</option>
+                        <option>Emily Johnson</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="studentGrade" class="form-label">Assign Grade</label>
+                    <input type="text" class="form-control" id="studentGrade" placeholder="Enter grade (e.g., A, B+, C)">
+                </div>
+                <button type="submit" class="btn btn-success">Submit Grade</button>
+            </form>
+        </div>
+    </div>
+</div>
